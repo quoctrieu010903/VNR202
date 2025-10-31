@@ -1,5 +1,5 @@
 // src/App.tsx
-import React from "react";
+
 import { Routes, Route } from "react-router-dom";
 import MainPage from "./components/MainPage"; // Trang chủ (trang cuộn)
 import QuizPage from "./components/QuizPage"; // Trang Quiz mới
