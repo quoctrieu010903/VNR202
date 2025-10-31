@@ -107,58 +107,60 @@ export default function QuestionStart() {
   console.log("Quiz State:", quizState);
   console.log("Game State:", gameState);
   return (
-    <div className="quiz-app-wrapper">
-      <audio
-        ref={backgroundMusicRef}
-        src="/src/assets/chao-mung-dang.mp3"
-        loop
-      />
-      <button className="mute-button" onClick={toggleMute}>
-        {isMuted ? "🔈" : "🔊"}
-      </button>
-
-      {gameState === "start" && <StartScreen onStart={handleStart} />}
-
-      {gameState === "playing" && (
-        <div className="quiz-container">
-          {!currentQuestion ? (
-            <div style={{ padding: "20px" }}>
-              <p>Lỗi: Không tìm thấy câu hỏi.</p>
-              <p>
-                Có thể bạn đã trả lời hết? Đang ở index:{" "}
-                {quizState.currentQuestion}
-              </p>
-            </div>
-          ) : (
-            <>
-              <ProgressBar progress={progress} />
-              <QuestionCard
-                question={currentQuestion}
-                questionNumber={quizState.currentQuestion + 1}
-                totalQuestions={QUESTIONS.length}
-                onAnswer={handleAnswer}
-              />
-              <ExplanationModal
-                isVisible={showModal}
-                imageUrl={currentQuestion.explain_image}
-                explanation={currentQuestion.explain}
-                isLastQuestion={
-                  quizState.currentQuestion === QUESTIONS.length - 1
-                }
-                onNext={handleNext}
-              />
-            </>
-          )}
-        </div>
-      )}
-
-      {gameState === "finished" && (
-        <FinalScore
-          score={quizState.score}
-          totalQuestions={QUESTIONS.length}
-          onRestart={handleRestart}
+    <section id="questions" className="quiz-app-wrapper">
+      <div className="quiz-app-wrapper">
+        <audio
+          ref={backgroundMusicRef}
+          src="/src/assets/chao-mung-dang.mp3"
+          loop
         />
-      )}
-    </div>
+        <button className="mute-button" onClick={toggleMute}>
+          {isMuted ? "🔈" : "🔊"}
+        </button>
+
+        {gameState === "start" && <StartScreen onStart={handleStart} />}
+
+        {gameState === "playing" && (
+          <div className="quiz-container">
+            {!currentQuestion ? (
+              <div style={{ padding: "20px" }}>
+                <p>Lỗi: Không tìm thấy câu hỏi.</p>
+                <p>
+                  Có thể bạn đã trả lời hết? Đang ở index:{" "}
+                  {quizState.currentQuestion}
+                </p>
+              </div>
+            ) : (
+              <>
+                <ProgressBar progress={progress} />
+                <QuestionCard
+                  question={currentQuestion}
+                  questionNumber={quizState.currentQuestion + 1}
+                  totalQuestions={QUESTIONS.length}
+                  onAnswer={handleAnswer}
+                />
+                <ExplanationModal
+                  isVisible={showModal}
+                  imageUrl={currentQuestion.explain_image}
+                  explanation={currentQuestion.explain}
+                  isLastQuestion={
+                    quizState.currentQuestion === QUESTIONS.length - 1
+                  }
+                  onNext={handleNext}
+                />
+              </>
+            )}
+          </div>
+        )}
+
+        {gameState === "finished" && (
+          <FinalScore
+            score={quizState.score}
+            totalQuestions={QUESTIONS.length}
+            onRestart={handleRestart}
+          />
+        )}
+      </div>
+    </section>
   );
 }
