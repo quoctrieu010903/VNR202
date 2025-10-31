@@ -47,28 +47,57 @@
 .thong-tin-chinh {
   display: flex;
   justify-content: space-around;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
+  padding: 20px;
 }
 
-.thong-tin-chinh div {
+.thong-tin-chinh .info-card {
   flex: 1;
-  min-width: 250px;
+  min-width: 300px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.thong-tin-chinh .info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 3px solid #d93025;
+}
+
+.info-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover .info-image img {
+  transform: scale(1.05);
+}
+
+.info-content {
   padding: 15px;
-  border: 1px dashed #d93025;
-  border-radius: 8px;
 }
 
 .thong-tin-chinh h4 {
   font-family: "Roboto", sans-serif;
   font-size: 1.1rem;
-  color: #555;
+  color: #d93025;
   margin: 0 0 5px 0;
 }
 
 .thong-tin-chinh p {
   font-family: "Playfair Display", serif;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #333;
   margin: 0;

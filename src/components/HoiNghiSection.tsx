@@ -59,26 +59,43 @@ export const HoiNghiSection: React.FC = () => {
 
         <div className="tong-quan-box">
           <p>
-            Trước nguy cơ tan rã của phong trào cộng sản, **Nguyễn Ái Quốc** với
-            tư cách là Phái viên của Quốc tế Cộng sản, đã triệu tập đại biểu các
-            tổ chức về **Cửu Long (Hương Cảng, Trung Quốc)** để giải quyết mâu
-            thuẫn.
+            Trước nguy cơ tan rã của phong trào cộng sản, Nguyễn Ái Quốc với tư
+            cách là Phái viên của Quốc tế Cộng sản, đã triệu tập đại biểu các tổ
+            chức về Cửu Long (Hương Cảng, Trung Quốc)để giải quyết mâu thuẫn.
           </p>
           <div className="thong-tin-chinh">
-            <motion.div variants={itemVariants}>
-              <h4>Thời gian:</h4>
-              <p>06/01 - 07/02/1930</p>
+            <motion.div variants={itemVariants} className="info-card">
+              <div className="info-image">
+                <img src="/images/hoi-nghi.jpg" alt="Hội nghị thành lập Đảng" />
+              </div>
+              <div className="info-content">
+                <h4>Thời gian:</h4>
+                <p>06/01 - 07/02/1930</p>
+              </div>
             </motion.div>
-            <motion.div variants={itemVariants}>
-              <h4>Địa điểm:</h4>
-              <p>Cửu Long (Hương Cảng, Trung Quốc)</p>
+            <motion.div variants={itemVariants} className="info-card">
+              <div className="info-image">
+                <img src="/images/huong-cang.jpg" alt="Hương Cảng" />
+              </div>
+              <div className="info-content">
+                <h4>Địa điểm:</h4>
+                <p>Cửu Long (Hương Cảng, Trung Quốc)</p>
+              </div>
             </motion.div>
-            <motion.div variants={itemVariants}>
-              <h4>Kết quả:</h4>
-              <p>
-                Thống nhất các tổ chức cộng sản thành một Đảng duy nhất, lấy tên
-                là **Đảng Cộng sản Việt Nam**.
-              </p>
+            <motion.div variants={itemVariants} className="info-card">
+              <div className="info-image">
+                <img
+                  src="/images/dang-cong-san.jpg"
+                  alt="Đảng Cộng sản Việt Nam"
+                />
+              </div>
+              <div className="info-content">
+                <h4>Kết quả:</h4>
+                <p>
+                  Thống nhất các tổ chức cộng sản thành một Đảng duy nhất, lấy
+                  tên là Đảng Cộng sản Việt Nam.
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>

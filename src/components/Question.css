@@ -201,7 +201,31 @@
     border-color: #ffd700;
     transform: translateY(-2px);
   }
-  
+  .final-score-container {
+    position: relative;
+    z-index: 10000;
+  }
+  .final-score-container h2 {
+    text-align: center;
+    color: #ffd700;
+    font-size: 2rem;
+  }
+  .final-score-container p {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  .final-score-container .score {
+    font-size: 2.5rem;
+    color: #32cd32;
+    font-weight: bold;
+    display: block;
+    margin: 10px 0;
+  }
+  .final-score-container .start-button {
+    margin-top: 20px;
+    display: inline-block;
+  }
   /* ... (Phần còn lại CSS của bạn đã OK) ... */
     /* === POP-UP ĐÃ TO RA === */
     .modal-content {

@@ -26,7 +26,10 @@ export const Footer: React.FC = () => {
 
         <div className="footer-info">
           <h4>Thông tin dự án</h4>
-          <p>Sản phẩm thiết kế từ dự án [Tên Dự Án Của Bạn]</p>
+          <p>
+            Sản phẩm thiết kế từ dự án Hành trình ra đời của Đảng Cộng Sản Việt
+            Nam{" "}
+          </p>
           <p>Nguồn tư liệu: Lịch sử Đảng Cộng sản Việt Nam, Báo Nhân Dân.</p>
           <p className="copyright">&copy; 2024. All rights reserved.</p>
         </div>

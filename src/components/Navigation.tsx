@@ -46,9 +46,6 @@ export const Navigation: React.FC = () => {
         <li>
           <a onClick={() => handleClickScroll("section-4")}>Ý Nghĩa</a>
         </li>
-        <li>
-          <a onClick={() => handleClickScroll("questions")}>Câu hỏi</a>
-        </li>
       </ul>
     </nav>
   );

@@ -65,6 +65,8 @@ interface TimelineItemProps {
   isHighlight?: boolean;
   isStart?: boolean;
   isEnd?: boolean;
+  imageTop?: string; // optional image path to show above the content
+  imageBottom?: string; // optional image path to show below the content
 }
 
 const TimelineItem: React.FC<TimelineItemProps> = ({
@@ -74,6 +76,8 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   isHighlight,
   isStart,
   isEnd,
+  imageTop,
+  imageBottom,
 }) => (
   <motion.div
     className={`timeline-item ${isHighlight ? "highlight" : ""} ${
@@ -84,11 +88,25 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay }}
   >
+    {/* image above (optional) */}
+    {imageTop && (
+      <div className="timeline-image top">
+        <img src={imageTop} alt={event} />
+      </div>
+    )}
+
     <div className="timeline-dot"></div>
     <div className="timeline-content">
       <p className="timeline-year">{year}</p>
       <p className="timeline-event">{event}</p>
     </div>
+
+    {/* image below (optional) */}
+    {imageBottom && (
+      <div className="timeline-image bottom">
+        <img src={imageBottom} alt={event} />
+      </div>
+    )}
   </motion.div>
 );
 

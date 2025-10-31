@@ -2,14 +2,16 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
+// 1. Import BrowserRouter từ thư viện router
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    {/* 2. Bọc toàn bộ ứng dụng <App /> của bạn bằng <BrowserRouter> */}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );

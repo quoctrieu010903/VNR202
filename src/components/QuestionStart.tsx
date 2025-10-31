@@ -108,7 +108,7 @@ export default function QuestionStart() {
   console.log("Game State:", gameState);
   return (
     <section id="questions" className="quiz-app-wrapper">
-      <div className="quiz-app-wrapper">
+      <div className="">
         <audio
           ref={backgroundMusicRef}
           src="/src/assets/chao-mung-dang.mp3"

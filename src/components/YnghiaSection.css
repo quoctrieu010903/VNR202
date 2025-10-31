@@ -26,26 +26,28 @@
 
 /* --- Khu vực 4 ý nghĩa --- */
 .ynghia-cards-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  grid-template-rows: repeat(2, auto);
   gap: 30px;
-  margin-bottom: 80px;
+  margin: 0 auto 80px;
+  max-width: 700px;
+  padding: 0 20px;
 }
 
 .ynghia-card {
-  flex-basis: 250px;
   background-color: #522727;
   border-radius: 12px;
   padding: 25px;
   text-align: center;
   border-bottom: 5px solid #d93025; /* Viền đỏ nhấn mạnh */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-  transition: background-color 0.3s;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .ynghia-card:hover {
   background-color: #653636;
+  transform: translateY(-5px);
 }
 
 .icon-wrapper {
@@ -72,8 +74,10 @@
 .timeline-title {
   font-size: 2.5rem;
   margin-top: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 80px; /* tăng margin-bottom để tránh chạm vào ảnh */
   color: #f0e68c;
+  position: relative;
+  z-index: 5; /* giúp chữ nổi lên trên ảnh */
 }
 
 .timeline-wrapper {
@@ -90,7 +94,7 @@
   content: "";
   position: absolute;
   top: 60px;
-  left: 5%;
+  left: 10%;
   right: 5%;
   height: 4px;
   background-color: #a0522d;
@@ -114,6 +118,34 @@
   padding: 0 10px;
   z-index: 2;
   transition: all 0.5s;
+}
+
+/* Images attached to timeline items (optional) */
+.timeline-image {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+  background: #fff;
+}
+.timeline-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.timeline-image.top {
+  position: absolute;
+  top: -150px; /* giảm bớt độ cao để không đè chữ */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 160px;
+  z-index: 3;
+}
+.timeline-image.bottom {
+  /* same spacing for top and bottom images so they look consistent */
+  margin-top: 18px;
+  margin-bottom: 18px;
 }
 
 .timeline-dot {
@@ -142,22 +174,51 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: #f0e68c;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .timeline-event {
   font-size: 1rem;
   color: #fff;
   line-height: 1.3;
-  margin-top: 50px; /* Đẩy nội dung xuống dưới dot */
+  margin-top: 30px; /* Đẩy nội dung xuống dưới dot */
+}
+
+/* Adjust spacing so images don't collide with the central line */
+/* .timeline-image.top {
+  transform: translateY(-6px);
+}
+.timeline-image.bottom {
+  transform: translateY(6px);
+} */
+/* Ảnh ở phía trên - nổi cao hơn timeline rõ ràng */
+.timeline-image.top {
+  position: absolute;
+  top: -180px; /* đẩy ảnh lên cao hơn timeline */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 160px;
+  z-index: 3;
+}
+
+/* Ảnh ở phía dưới - hạ thấp thêm chút để cân đối */
+.timeline-image.bottom {
+  margin-top: 80px;
 }
 
 /* Responsive cho màn hình nhỏ */
 @media (max-width: 768px) {
+  .ynghia-cards-container {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+
   .timeline-wrapper {
     flex-direction: column;
     align-items: flex-start;
     padding-left: 20px;
+    margin-top: 40px;
   }
   .timeline-wrapper::before {
     left: 20px;

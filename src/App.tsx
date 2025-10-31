@@ -1,35 +1,22 @@
 // src/App.tsx
-
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import MainPage from "./components/MainPage"; // Trang chủ (trang cuộn)
+import QuizPage from "./components/QuizPage"; // Trang Quiz mới
 import "./App.css";
-import { Navigation } from "./components/Navigation";
-import { ReadingProgressBar } from "./components/ReadingProgressBar";
-import { HeroSection } from "./components/HeroSection";
-import { KhungHoangSection } from "./components/KhungHoangSection"; // Component mới 1
-import { HopNhatSection } from "./components/HopNhatSection"; // Component mới 2
-import { HoiNghiSection } from "./components/HoiNghiSection";
-import { YnghiaSection } from "./components/YnghiaSection";
-import { Footer } from "./components/Footer";
-import QuestionStart from "./components/QuestionStart";
 
 function App() {
   return (
-    <>
-      <ReadingProgressBar />
-      <Navigation />
-
-      <main>
-        <HeroSection />
-        {/* THỨ TỰ MỚI: Tách Bối cảnh ra làm 2 phần */}
-        <KhungHoangSection /> {/* Thất bại các phong trào tư sản */}
-        <HopNhatSection /> {/* Chia rẽ 3 tổ chức cộng sản */}
-        <HoiNghiSection />
-        <YnghiaSection />
-        {/* <QuestionStart/> */}
-        <QuestionStart />
-      </main>
-
-      <Footer />
-    </>
+    <div className="App">
+      {/* App.tsx chỉ định tuyến.
+        - Khi người dùng vào "/", nó sẽ tải <MainPage />
+        - Khi người dùng vào "/quiz", nó sẽ tải <QuizPage />
+      */}
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/quiz" element={<QuizPage />} />
+      </Routes>
+    </div>
   );
 }
 
