@@ -1,0 +1,31 @@
+/* src/index.css */
+
+/* Reset mặc định của trình duyệt */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Roboto", sans-serif; /* Giữ lại font chữ */
+  background-color: #1a1a1a; /* Thêm màu nền tối cho toàn trang */
+}
+
+/* Đảm bảo #root chiếm toàn bộ chiều rộng */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+#section-2,
+#section-2-1, /* THÊM ID NÀY */
+#section-3,
+#section-4 {
+  padding-top: 80px;
+  margin-top: -80px;
+  scroll-margin-top: 80px;
+}
+
+/* Riêng phần Hero Section không cần margin-top */
+#section-1 {
+  scroll-margin-top: 80px;
+}

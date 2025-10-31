@@ -1,0 +1,242 @@
+/* ====================================
+   FILE: Question.css (ĐÃ SỬA)
+   ==================================== */
+   .quiz-app-wrapper {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", "Arial", sans-serif;
+    color: white;
+    height: 100%;
+    overflow-x: hidden;
+    background-image: url("https://www.namdinh.gso.gov.vn/uploads/news/2025_02/dang.png");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* <-- Giữ ảnh nền đứng yên khi cuộn */
+    position: relative;
+  }
+  
+  
+  .quiz-app-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(139, 0, 0, 0.7); */
+    z-index: 0.05 ;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .flag-symbol {
+    width: 80px;
+    height: 60px;
+    background: #b22222;
+    border: 3px solid #ffd700;
+    position: relative;
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  }
+  
+  .flag-symbol::after {
+    content: "★";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffd700;
+    font-size: 36px;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+  }
+  
+  .main-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 30px 0;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+  }
+  
+  .subtitle {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+  }
+  
+  .start-button {
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    color: #8b0000;
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .start-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+    background: linear-gradient(45deg, #ffa500, #ffd700);
+  }
+  
+  /* ====================================
+    SỬA LỖI CHÍNH LÀ Ở ĐÂY!!!
+    XÓA 'display: none;' VÀ THAY BẰNG 'display: block;'
+    ====================================
+  */
+  .quiz-container {
+    display: block; 
+    max-width: 800px;
+    width: 100%;
+    margin: 20px auto; /* <-- Dòng này đã đúng! */
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  /* ====================================
+     SỬA LỖI COPY NHẦM Ở ĐÂY
+     ==================================== */
+     .progress-bar-container {
+      /* Đây là style GỐC của thanh tiến độ */
+      width: 100%;
+      height: 10px; 
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      margin-bottom: 25px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: #ffd700;
+      border-radius: 10px;
+      transition: width 0.5s ease-out;
+      position: absolute;
+    }
+  /* XÓA opacity: 0 mà bạn có ở phiên bản trước */
+  .question-header,
+  .answers-grid {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    opacity: 1; /* <-- Đảm bảo là 1 */
+    transform: scale(1); /* <-- Đảm bảo là 1 */
+  }
+  
+  .question-number {
+    background: #ffd700;
+    color: #8b0000;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  
+  .question-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 1.4;
+    /* Kế thừa 'color: white' từ body là OK */
+  }
+  
+  .answers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .answer-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-align: left;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .answer-button:hover {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: #ffd700;
+    transform: translateY(-2px);
+  }
+  
+  /* ... (Phần còn lại CSS của bạn đã OK) ... */
+    /* === POP-UP ĐÃ TO RA === */
+    .modal-content {
+      background: #8b0000;
+      border: 2px solid #ffd700;
+      border-radius: 15px;
+      padding: 30px;
+      width: 90%;
+      max-width: 900px; /* === ĐÃ TĂNG TỪ 600px LÊN 800px === */
+      text-align: center;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+      transform: scale(0.9);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .modal-backdrop.visible .modal-content {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    /* === ẢNH ĐÃ CAO HƠN === */
+    #modalImage {
+      width: 100%;
+      max-height: 700px; /* === ĐÃ TĂNG TỪ 250px LÊN 400px === */
+      object-fit: contain; /* Giữ cover để ảnh lấp đầy, bạn có thể đổi thành 'contain' nếu muốn thấy toàn bộ ảnh */
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+    }
+    #modalText {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+    #modalNextButton {
+      font-size: 1.1rem;
+      padding: 15px 35px;
+    }

@@ -1,0 +1,132 @@
+/* src/components/HeroSection.css */
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  width: 100%; /* Đảm bảo nó rộng 100% */
+
+  /* --- PHẦN QUAN TRỌNG --- */
+  /* 1. Đường dẫn phải bắt đầu bằng dấu / */
+  /* 2. Tên file phải chính xác như file trong thư mục public */
+  background-image: url("/background-hongkong.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* --- Điều chỉnh màu chữ và hiệu ứng lớp phủ (overlay) --- */
+  color: white; /* Giữ nguyên màu chữ trắng */
+  position: relative; /* Quan trọng để tạo lớp phủ */
+  overflow: hidden; /* Tránh tràn ảnh nếu có hiệu ứng */
+}
+
+/* Thêm một lớp phủ (overlay) để làm nổi bật chữ và tạo không khí */
+.hero-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Màu đen trong suốt 50% */
+  z-index: 1; /* Đảm bảo lớp phủ nằm dưới chữ nhưng trên ảnh nền */
+}
+
+.hero-content {
+  position: relative; /* Đảm bảo nội dung nằm trên lớp phủ */
+  z-index: 2; /* Ưu tiên hiển thị chữ và nút */
+  padding: 20px; /* Thêm padding để tránh chữ sát mép màn hình */
+  max-width: 90%; /* Giới hạn chiều rộng nội dung */
+}
+
+/* --- Chỉnh sửa kích thước font và khoảng cách --- */
+.hero-content h1 {
+  font-family: "Playfair Display", serif; /* Thay đổi font chữ để trang trọng hơn */
+  font-size: 5rem; /* Tăng kích thước tiêu đề chính */
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.1; /* Giảm khoảng cách dòng */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Thêm đổ bóng chữ để nổi bật */
+}
+
+.hero-content h2 {
+  font-family: "Roboto", sans-serif; /* Font chữ dễ đọc hơn cho tiêu đề phụ */
+  font-size: 2rem; /* Tăng kích thước tiêu đề phụ */
+  font-weight: 400;
+  margin-top: 1.5rem; /* Tăng khoảng cách với h1 */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Đổ bóng nhẹ */
+}
+
+.hero-cta-button {
+  display: inline-block;
+  margin-top: 3rem; /* Tăng khoảng cách với h2 */
+  padding: 15px 30px; /* Tăng kích thước nút */
+  background-color: #d93025; /* Giữ nguyên màu đỏ chủ đạo */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s; /* Thêm hiệu ứng chuyển màu */
+  font-size: 1.1rem; /* Tăng kích thước chữ trong nút */
+}
+
+.hero-cta-button:hover {
+  background-color: #b2261f; /* Đổi màu khi hover */
+  transform: scale(1.05);
+}
+
+/* --- Responsive cho màn hình nhỏ hơn --- */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+  .hero-cta-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content h2 {
+    font-size: 1.2rem;
+  }
+  .hero-cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+/* src/components/HeroSection.css */
+
+/* ... (Các CSS đã có) ... */
+
+/* Bổ sung lớp phủ để áp dụng hiệu ứng opacity của Framer Motion */
+.hero-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Dùng lại ảnh nền từ .hero-container */
+  background-image: url("/background-hongkong.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 1; /* Nằm trên lớp phủ màu đen (::before) */
+}
+
+.hero-container::before {
+  /* Đảm bảo lớp phủ màu đen nằm dưới lớp phủ ảnh nền */
+  z-index: 0;
+}
+
+.hero-content {
+  /* Đảm bảo nội dung nằm trên cùng */
+  z-index: 2;
+}

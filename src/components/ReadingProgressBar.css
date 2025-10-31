@@ -1,0 +1,12 @@
+/* src/components/ReadingProgressBar.css */
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px; /* Chiều cao thanh */
+  background: #f0e68c; /* Màu vàng kim loại */
+  z-index: 10000; /* Phải cao hơn Navigation bar */
+  transform-origin: 0%; /* Quan trọng: Đảm bảo thanh mở rộng từ trái sang phải */
+}

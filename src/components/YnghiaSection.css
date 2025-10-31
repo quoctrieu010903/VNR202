@@ -1,0 +1,182 @@
+/* src/components/YnghiaSection.css */
+
+.ynghia-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Dùng màu đỏ sẫm trang trọng */
+  background-color: #3f1e1e;
+  color: white;
+  padding: 100px 20px;
+}
+
+.ynghia-content {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.ynghia-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #f0e68c; /* Màu vàng kim loại */
+  margin-bottom: 60px;
+}
+
+/* --- Khu vực 4 ý nghĩa --- */
+.ynghia-cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.ynghia-card {
+  flex-basis: 250px;
+  background-color: #522727;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  border-bottom: 5px solid #d93025; /* Viền đỏ nhấn mạnh */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s;
+}
+
+.ynghia-card:hover {
+  background-color: #653636;
+}
+
+.icon-wrapper {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.ynghia-card h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 10px 0;
+}
+
+.ynghia-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* --- Dòng thời gian --- */
+
+.timeline-title {
+  font-size: 2.5rem;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  color: #f0e68c;
+}
+
+.timeline-wrapper {
+  display: flex;
+  align-items: flex-start; /* Căn trên cùng */
+  position: relative;
+  width: 90%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Đường kẻ chính (trục thời gian) */
+.timeline-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 5%;
+  right: 5%;
+  height: 4px;
+  background-color: #a0522d;
+  z-index: 1;
+  /* Thêm thuộc tính cho hiệu ứng vẽ */
+  transform-origin: left; /* Bắt đầu vẽ từ bên trái */
+  transform: scaleX(0); /* Chiều rộng ban đầu bằng 0 */
+  transition: transform 1.5s ease-out; /* Thời gian vẽ */
+}
+
+/* Thêm class kích hoạt khi đã cuộn tới */
+.timeline-wrapper.in-view::before {
+  transform: scaleX(1); /* Chiều rộng full */
+}
+
+.timeline-item {
+  position: relative;
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  padding: 0 10px;
+  z-index: 2;
+  transition: all 0.5s;
+}
+
+.timeline-dot {
+  width: 15px;
+  height: 15px;
+  background-color: #d93025;
+  border-radius: 50%;
+  position: absolute;
+  top: 53px; /* Căn giữa dọc theo đường kẻ */
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid #3f1e1e; /* Viền trùng với màu nền */
+  box-shadow: 0 0 0 2px #fff;
+}
+
+/* Hiệu ứng nổi bật (Thắng lợi lớn) */
+.timeline-item.highlight .timeline-dot {
+  background-color: #f0e68c; /* Chuyển sang màu vàng */
+  width: 20px;
+  height: 20px;
+  top: 50px;
+  border: 3px solid #3f1e1e;
+}
+
+.timeline-year {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f0e68c;
+  margin-bottom: 5px;
+}
+
+.timeline-event {
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.3;
+  margin-top: 50px; /* Đẩy nội dung xuống dưới dot */
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+  .timeline-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+  .timeline-wrapper::before {
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    height: 100%;
+  }
+  .timeline-item {
+    width: 100%;
+    margin-bottom: 40px;
+    padding-left: 30px;
+    text-align: left;
+  }
+  .timeline-dot {
+    left: 17px;
+    top: 5px;
+  }
+  .timeline-event {
+    margin-top: 0;
+  }
+}

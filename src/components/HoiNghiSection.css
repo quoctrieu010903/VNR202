@@ -1,0 +1,177 @@
+/* src/components/HoiNghiSection.css */
+
+.hoinghi-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Thay đổi màu nền sang màu sáng hơn để tạo bước ngoặt */
+  background-color: #f7f7f7;
+  color: #333;
+  padding: 100px 20px;
+  min-height: 100vh;
+}
+
+.hoinghi-content {
+  max-width: 1250px;
+  width: 100%;
+  text-align: center;
+}
+
+.hoinghi-content h2 {
+  font-family: "Playfair Display", serif;
+  /* font-size: 3rem; */ /* <-- Code cũ */
+  font-size: 2.8rem; /* <-- Giảm nhẹ kích thước font */
+  font-weight: 900;
+  color: #d93025;
+  margin-bottom: 20px;
+  /* THÊM THUỘC TÍNH QUAN TRỌNG NÀY */
+  white-space: nowrap; /* Buộc văn bản hiển thị trên một dòng */
+}
+
+/* Hộp tổng quan sự kiện */
+.tong-quan-box {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.tong-quan-box p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Thông tin chi tiết 3 cột */
+.thong-tin-chinh {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.thong-tin-chinh div {
+  flex: 1;
+  min-width: 250px;
+  padding: 15px;
+  border: 1px dashed #d93025;
+  border-radius: 8px;
+}
+
+.thong-tin-chinh h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0 0 5px 0;
+}
+
+.thong-tin-chinh p {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+/* Phần Cương lĩnh */
+.hoinghi-content h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: #2f6c7a; /* Màu xanh nhấn mạnh */
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.cuonglinh-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.cuonglinh-card {
+  flex-basis: 300px;
+  background-color: #e8e8e8;
+  border-left: 5px solid #d93025;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cuonglinh-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.cuonglinh-card h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  color: #d93025;
+  margin: 0 0 10px 0;
+}
+
+.cuonglinh-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+/* src/components/HoiNghiSection.css */
+
+/* ... (CSS đã có) ... */
+
+/* CSS cho phần giới thiệu Nguyễn Ái Quốc */
+.nguyen-ai-quoc-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #fff0f0; /* Nền màu hồng nhạt */
+  border-radius: 15px;
+  padding: 25px;
+  border-left: 8px solid #d93025; /* Viền đỏ nổi bật */
+}
+
+.naq-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Ảnh tròn */
+  object-fit: cover;
+  margin-right: 25px;
+  flex-shrink: 0; /* Không bị co lại */
+  border: 3px solid #d93025;
+}
+
+.naq-text {
+  text-align: left;
+}
+
+.naq-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.naq-role {
+  font-weight: 700;
+  color: #d93025;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nguyen-ai-quoc-intro {
+    flex-direction: column;
+    text-align: center;
+  }
+  .naq-image {
+    margin: 0 20px 20px 0;
+  }
+  .naq-text {
+    text-align: center;
+  }
+}

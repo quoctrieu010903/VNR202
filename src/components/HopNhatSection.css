@@ -1,0 +1,88 @@
+/* src/components/HopNhatSection.css */
+
+.hopnhat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh; /* Chiều cao vừa đủ */
+  width: 100%;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.hopnhat-content {
+  max-width: 1000px;
+  text-align: center;
+}
+
+.hopnhat-description,
+.hopnhat-description-end {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #cccccc;
+  margin-bottom: 3rem;
+}
+
+.hopnhat-description-end {
+  font-weight: 700;
+  color: #d93025; /* Nhấn mạnh sự cần thiết của Đảng */
+  margin-top: 3rem;
+}
+
+/* --- Định dạng cho 3 thẻ tổ chức (Giữ nguyên từ BoiCanhSection.css) --- */
+.tochuc-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.tochuc-card {
+  flex-basis: 280px;
+  flex-grow: 1;
+  max-width: 300px;
+  padding: 0;
+  background-color: #242424;
+  border: 1px solid #444;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Hiệu ứng Glow đã nâng cấp */
+.tochuc-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(217, 48, 37, 0.8), 0 0 5px rgba(217, 48, 37, 0.5);
+  background-color: #292929;
+}
+
+.card-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  background-color: #333;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.tochuc-card h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  margin: 0 0 10px 0;
+  color: white;
+}
+
+.tochuc-card span {
+  font-size: 0.9rem;
+  color: #aaa;
+}
